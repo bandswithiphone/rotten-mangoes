@@ -2,6 +2,8 @@ class Movie < ActiveRecord::Base
 
       has_many :reviews
 
+      mount_uploader :image, PosterimageUploader
+
       validates :title,
         presence: true
 
@@ -14,16 +16,13 @@ class Movie < ActiveRecord::Base
       validates :description,
         presence: true
 
-      validates :poster_image_url,
-        presence: true
-
       validates :release_date,
         presence: true
 
       validate :release_date_is_in_the_future
 
       def review_average
-        reviews.sum(:rating_out_of_ten)/reviews.size
+        reviews.sum(:rating_out_of_ten)/reviews.size if reviews.length > 0
       end
 
       protected
