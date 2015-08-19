@@ -46,5 +46,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 #Use rmagick for picture uploading
 gem 'rmagick'
+
 # Use carrierwave for picture uploading
 gem 'carrierwave'
+
+#gem for pagination
+gem 'kaminari'
+
