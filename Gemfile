@@ -53,3 +53,5 @@ gem 'carrierwave'
 #gem for pagination
 gem 'kaminari'
 
+gem 'pry'
+
